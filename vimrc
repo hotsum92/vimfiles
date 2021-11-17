@@ -28,6 +28,7 @@ set history=1000
 " behavior
 
 syntax on
+set spell
 set path+=**
 set nrformats=alpha,hex,bin
 set matchpairs+=<:>
