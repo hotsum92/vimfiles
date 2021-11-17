@@ -31,7 +31,7 @@ syntax on
 set path+=**
 set nrformats=alpha,hex,bin
 set matchpairs+=<:>
-set hidden
+set nohidden
 set autoread
 set shellslash
 set wildmenu
