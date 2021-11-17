@@ -1,8 +1,8 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " backup
 
-if !isdirectory($home."/.vim-backup")
-  call mkdir($home."/.vim-backup")
+if !isdirectory($HOME."/.vim-backup")
+  call mkdir($HOME."/.vim-backup")
 endif
 
 if !isdirectory($HOME."/.vim-backup/backup")
