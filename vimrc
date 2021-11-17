@@ -188,3 +188,8 @@ let QFixHowm_Key = '<Space>'
 let QFixHowm_KeyB = ','
 
 let howm_dir = '~/vimfiles/howm'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" fuenor/qfixhowm
+
+let QFixHowm_FileType = 'markdown'
