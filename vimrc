@@ -160,7 +160,7 @@ map / <Plug>(easymotion-sn)
 let g:ctrlp_cmd = 'CtrlPCurWD'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" qFixGrep
+" fuenor/qfixgrep
 
 " use grep
 let mygrepprg = 'grep'
@@ -178,13 +178,11 @@ let MyGrep_RecursiveMode = 1
 let MyGrep_DefaultSearchWord = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-closetag
+" alvan/vim-closetag
 
 let g:closetag_filenames = '*.html,*.xhtml,*.js,*.jsx,*.php,*.tsx'
 
-"Howmコマンドキーマップ
 let QFixHowm_Key = '<Space>'
-"Howmコマンドの2ストローク目キーマップ
 let QFixHowm_KeyB = ','
 
 let howm_dir = '~/vimfiles/howm'
