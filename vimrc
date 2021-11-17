@@ -35,7 +35,7 @@ set nohidden
 set autoread
 set shellslash
 set wildmenu
-set formatoptions=
+set formatoptions-=cro
 
 set incsearch
 set hlsearch
