@@ -174,3 +174,6 @@ let howm_dir = '~/vimfiles/howm'
 " fuenor/qfixhowm
 
 let QFixHowm_FileType = 'markdown'
+
+let MyGrep_CurrentDirMode = 0
+let MyGrep_ShellEncoding = 'utf-8'
