@@ -118,7 +118,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/vim-easy-align'
 Plug 'cohama/lexima.vim'
 Plug 'kien/ctrlp.vim'
-Plug 'fuenor/qfixgrep'
+"Plug 'fuenor/qfixgrep'
 Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
 Plug 'vim-scripts/zoom.vim'
@@ -159,24 +159,6 @@ map / <Plug>(easymotion-sn)
 " kien/ctrlp.vim
 
 let g:ctrlp_cmd = 'CtrlPCurWD'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" fuenor/qfixgrep
-
-" use grep
-let mygrepprg = 'grep'
-
-let QFixWin_EnableMode = 1
-let QFix_UseLocationList = 1
-
-" close the quick fix window after opening a file
-let QFix_CloseOnJump = 0
-
-let MyGrep_Key = " "
-let MyGrep_RecursiveMode = 1
-
-" input the word on the current cursor
-let MyGrep_DefaultSearchWord = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " alvan/vim-closetag
