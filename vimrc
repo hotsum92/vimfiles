@@ -37,6 +37,7 @@ set autoread
 set shellslash
 set wildmenu
 set formatoptions-=cro
+set backspace=indent,eol,start
 
 set incsearch
 set hlsearch
