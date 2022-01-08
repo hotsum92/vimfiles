@@ -165,11 +165,6 @@ let g:ctrlp_cmd = 'CtrlPCurWD'
 
 let g:closetag_filenames = '*.html,*.xhtml,*.js,*.jsx,*.php,*.tsx'
 
-let QFixHowm_Key = '<Space>'
-let QFixHowm_KeyB = ','
-
-let howm_dir = '~/vimfiles/howm'
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fuenor/qfixhowm
 
@@ -177,3 +172,9 @@ let QFixHowm_FileType = 'markdown'
 
 let MyGrep_CurrentDirMode = 0
 let MyGrep_ShellEncoding = 'utf-8'
+
+let QFixHowm_Key = '<Space>'
+let QFixHowm_KeyB = ','
+
+let howm_dir = '~/vimfiles/howm'
+
