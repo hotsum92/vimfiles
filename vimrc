@@ -163,7 +163,7 @@ let g:ctrlp_cmd = 'CtrlPCurWD'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " alvan/vim-closetag
 
-let g:closetag_filenames = '*.html,*.xhtml,*.js,*.jsx,*.php,*.tsx'
+let g:closetag_filenames = '*.html,*.xhtml'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fuenor/qfixhowm
