@@ -1,4 +1,12 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" backup
+
+set noswapfile
+set nobackup
+set viminfo=
+set noundofile
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " behavior
 
 syntax on
