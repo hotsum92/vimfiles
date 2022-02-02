@@ -1,30 +1,4 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" backup
-
-if !isdirectory($HOME."/.vim-backup")
-  call mkdir($HOME."/.vim-backup")
-endif
-
-if !isdirectory($HOME."/.vim-backup/backup")
-  call mkdir($HOME."/.vim-backup/backup")
-endif
-
-if !isdirectory($HOME."/.vim-backup/directory")
-  call mkdir($HOME."/.vim-backup/directory")
-endif
-
-if !isdirectory($HOME."/.vim-backup/undo")
-  call mkdir($HOME."/.vim-backup/undo")
-endif
-
-set backupdir=$HOME/.vim-backup/backup
-set directory=$HOME/.vim-backup/directory
-set undodir=$HOME/.vim-backup/undo
-
-set undofile
-set history=1000
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " behavior
 
 syntax on
