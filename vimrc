@@ -10,7 +10,7 @@ set noundofile
 " behavior
 
 syntax on
-set spell
+set nospell
 set path+=**
 set nrformats=alpha,hex,bin
 set matchpairs+=<:>
