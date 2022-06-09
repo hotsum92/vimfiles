@@ -184,3 +184,5 @@ let QFixHowm_KeyB = ','
 
 let howm_dir = '~/vimfiles/howm'
 
+let mygrepprg = 'grep'
+
