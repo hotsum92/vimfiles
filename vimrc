@@ -130,6 +130,7 @@ Plug 'vim-scripts/zoom.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'Quramy/tsuquyomi'
 Plug 'fuenor/qfixhowm'
+Plug 'qpkorr/vim-renamer'
 
 call plug#end()
 
