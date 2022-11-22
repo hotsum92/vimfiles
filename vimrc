@@ -83,6 +83,12 @@ function! Stab()
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" default plug
+
+packadd! matchit
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " plug
 
 call plug#begin('~/.vim/plugged')
