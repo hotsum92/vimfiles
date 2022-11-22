@@ -103,7 +103,6 @@ Plug 'alvan/vim-closetag'
 Plug 'vim-scripts/zoom.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'Quramy/tsuquyomi'
-Plug 'fuenor/qfixhowm'
 
 call plug#end()
 
@@ -138,17 +137,3 @@ map / <Plug>(easymotion-sn)
 " alvan/vim-closetag
 
 let g:closetag_filenames = '*.html,*.xhtml,*.tsx'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" fuenor/qfixhowm
-
-let QFixHowm_FileType = 'markdown'
-
-let MyGrep_CurrentDirMode = 0
-let MyGrep_ShellEncoding = 'utf-8'
-
-let QFixHowm_Key = '<Space>'
-let QFixHowm_KeyB = ','
-
-let howm_dir = '~/vimfiles/howm'
-
