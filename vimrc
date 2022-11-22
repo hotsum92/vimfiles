@@ -129,11 +129,6 @@ let g:EasyMotion_enter_jump_first = 1
 map / <Plug>(easymotion-sn)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" kien/ctrlp.vim
-
-let g:ctrlp_cmd = 'CtrlPCurWD'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " alvan/vim-closetag
 
 let g:closetag_filenames = '*.html,*.xhtml,*.tsx'
