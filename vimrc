@@ -103,6 +103,7 @@ Plug 'alvan/vim-closetag'
 Plug 'vim-scripts/zoom.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'Quramy/tsuquyomi'
+Plug 'github/copilot.vim'
 
 call plug#end()
 
@@ -137,3 +138,19 @@ map / <Plug>(easymotion-sn)
 " alvan/vim-closetag
 
 let g:closetag_filenames = '*.html,*.xhtml,*.tsx'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" copilot.vim
+
+let g:copilot_filetypes = {
+    \ 'gitcommit': v:true,
+    \ 'markdown': v:true,
+    \ 'yaml': v:true
+    \ }
+
+autocmd BufReadPre *
+     \ let f=getfsize(expand("<afile>"))
+     \ | if f > 100000 || f == -2
+     \ | let b:copilot_enabled = v:false
+     \ | endif
+
