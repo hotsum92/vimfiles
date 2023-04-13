@@ -1,8 +1,13 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " behavior
 
+if has('gui_running')
+  set spell
+else
+  set nospell
+endif
+
 syntax on
-set spell
 set path+=**
 set nrformats=alpha,hex,bin
 set matchpairs+=<:>
