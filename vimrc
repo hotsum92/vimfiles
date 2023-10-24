@@ -72,6 +72,7 @@ set laststatus=2
 set nowrap
 set list
 set listchars=tab:^\ ,trail:~
+set showcmd
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " keymap
@@ -114,6 +115,11 @@ function! Stab()
     echohl None
   endtry
 endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" auto cmd
+autocmd QuickFixCmdPost *grep* cwindow
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " default plug
