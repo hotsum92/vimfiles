@@ -142,6 +142,12 @@ Plug 'qpkorr/vim-renamer'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Quramy/tsuquyomi
+
+let g:tsuquyomi_disable_default_mappings = 1
+nnoremap <C-]> :TsuquyomiDefinition<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " t9md/vim-quickhl
 
 nmap <Space>m <Plug>(quickhl-manual-this)
