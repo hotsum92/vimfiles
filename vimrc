@@ -121,8 +121,8 @@ vmap <C-ScrollWheelRight> <nop>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " keymap
 
-"nnoremap <Up>    :tabclose<CR>
-"nnoremap <Down>  :tabnew<CR>
+nnoremap <Up>    :tabclose<CR>
+nnoremap <Down>  :tabnew<CR>
 nnoremap <Left>  :tabprevious<CR>
 nnoremap <Right> :tabnext<CR>
 
@@ -186,7 +186,6 @@ Plug 'alvan/vim-closetag'
 Plug 'kshenoy/vim-signature'
 Plug 'Quramy/tsuquyomi'
 Plug 'github/copilot.vim'
-Plug 'qpkorr/vim-renamer'
 
 call plug#end()
 
