@@ -77,6 +77,11 @@ set showcmd
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " keymap
 
+nnoremap <Up>    :tabclose<CR>
+nnoremap <Down>  :tabnew<CR>
+nnoremap <Left>  :tabprevious<CR>
+nnoremap <Right> :tabnext<CR>
+
 nnoremap <Esc><Esc> :nohlsearch<CR>
 
 nnoremap <C-h> <C-w>h
