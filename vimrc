@@ -25,6 +25,11 @@ set undofile
 set history=1000
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" grep
+
+set grepprg=git\ grep\ -I\ --line-number
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " behavior
 
 if has('gui_running')
