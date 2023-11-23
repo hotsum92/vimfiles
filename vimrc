@@ -119,6 +119,20 @@ vmap <S-ScrollWheelRight> <nop>
 vmap <C-ScrollWheelRight> <nop>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" foldmethod
+
+set foldlevel=1
+set foldnestmax=2
+
+autocmd FileType yaml setlocal foldmethod=indent
+autocmd FileType json setlocal foldmethod=syntax
+autocmd FileType html setlocal foldmethod=syntax
+autocmd FileType css setlocal foldmethod=syntax
+autocmd FileType python setlocal foldmethod=indent
+autocmd FileType typescript setlocal foldmethod=syntax
+autocmd FileType typescriptreact setlocal foldmethod=syntax
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " keymap
 
 nnoremap <Up>    :tabclose<CR>
