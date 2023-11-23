@@ -180,6 +180,18 @@ function! Stab()
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" compiler
+
+command! -nargs=* Tsc call Stsc()
+
+function Stsc()
+  compiler tsc
+  set makeprg=tsc\ --noEmit
+  make
+  cwindow
+endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " auto cmd
 autocmd QuickFixCmdPost *grep* cwindow
 
