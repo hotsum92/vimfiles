@@ -200,6 +200,7 @@ Plug 'alvan/vim-closetag'
 Plug 'kshenoy/vim-signature'
 Plug 'Quramy/tsuquyomi'
 Plug 'github/copilot.vim'
+Plug 'preservim/vim-indent-guides'
 
 call plug#end()
 
@@ -256,3 +257,10 @@ autocmd BufReadPre *
      \ | let b:copilot_enabled = v:false
      \ | endif
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" indent-guides
+
+let g:indent_guides_enable_on_vim_startup = 1
+
+hi IndentGuidesOdd  ctermbg=black
+hi IndentGuidesEven ctermbg=darkgrey
