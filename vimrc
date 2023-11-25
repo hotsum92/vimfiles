@@ -158,8 +158,8 @@ nnoremap <C-l> <C-w>l
 command! -nargs=* Jp call Sjp()
 
 function! Sjp()
-  /[^\x01-\x7E]\+
-  normal! n
+    "let @/ = '[^\x01-\x7E]\+'
+    let @/ = '[\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\uFF00-\uFFEF\u4E00-\u9FFF\u3400-\u4DBF]\+'
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
