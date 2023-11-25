@@ -126,8 +126,8 @@ vmap <C-ScrollWheelRight> <nop>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " foldmethod
 
-set foldlevel=1
-set foldnestmax=2
+"set foldlevel=1
+"set foldnestmax=2
 
 autocmd FileType yaml setlocal foldmethod=indent
 autocmd FileType json setlocal foldmethod=syntax
@@ -193,8 +193,8 @@ endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " auto cmd
-autocmd QuickFixCmdPost *grep* cwindow
 
+autocmd QuickFixCmdPost *grep* cwindow
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " default plug
