@@ -153,9 +153,14 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set tabstop, softtabstop and shiftwidth to the same value
+" search japanese
 
+command! -nargs=* Jp call Sjp()
 
+function! Sjp()
+  /[^\x01-\x7E]\+
+  normal! n
+endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set tabstop, softtabstop and shiftwidth to the same value
