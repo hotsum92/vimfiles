@@ -155,6 +155,11 @@ nnoremap <C-l> <C-w>l
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set tabstop, softtabstop and shiftwidth to the same value
 
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set tabstop, softtabstop and shiftwidth to the same value
+
 command! -nargs=* Stab call Stab()
 
 function! Stab()
@@ -184,7 +189,7 @@ endfunction
 
 command! -nargs=* Tsc call Stsc()
 
-function Stsc()
+function! Stsc()
   compiler tsc
   set makeprg=tsc\ --noEmit
   make
