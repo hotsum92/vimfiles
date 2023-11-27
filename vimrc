@@ -163,6 +163,16 @@ function! Sjp()
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" markdown table
+
+command! -nargs=* Mdtable call Sjp()
+
+function! Sjp()
+    "let @/ = '[^\x01-\x7E]\+'
+    let @/ = '[\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\uFF00-\uFFEF\u4E00-\u9FFF\u3400-\u4DBF]\+'
+endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set tabstop, softtabstop and shiftwidth to the same value
 
 command! -nargs=* Stab call Stab()
@@ -292,3 +302,18 @@ let g:indent_guides_enable_on_vim_startup = 1
 
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" iabbrev
+
+augroup sql
+  autocmd FileType sql iabbrev <buffer> select SELECT
+  autocmd FileType sql iabbrev <buffer> from FROM
+  autocmd FileType sql iabbrev <buffer> where WHERE
+  autocmd FileType sql iabbrev <buffer> order ORDER
+  autocmd FileType sql iabbrev <buffer> by BY
+augroup END
+
+augroup md
+  autocmd FileType markdown iabbrev <buffer> \|\|\| \|     \|     \|     \|<CR>\| --- \| --- \| --- \|<CR>\|     \|     \|     \|<CR>\|     \|     \|     \|<CR>\|     \|     \|     \|
+augroup END
