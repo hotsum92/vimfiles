@@ -28,6 +28,13 @@ set history=1000
 " grep
 
 set grepprg=git\ grep\ -I\ --line-number
+command -nargs=+ Qfix :cexpr system("<args>") | cwindow
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" complete
+
+"set complete=.,w,b,t,i " default
+set complete=.,w,b,t
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " behavior
@@ -212,6 +219,18 @@ function! Stsc()
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" blame
+
+command! -nargs=* Blame call Sblame()
+
+function! Sblame()
+  let l:line = line('.')
+  let l:command = 'git blame % -L ' . l:line
+  execute '!' . l:command
+endfunction
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " auto cmd
 
 autocmd QuickFixCmdPost *grep* cwindow
@@ -239,6 +258,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'Quramy/tsuquyomi'
 Plug 'github/copilot.vim'
 Plug 'preservim/vim-indent-guides'
+Plug 'qpkorr/vim-renamer'
 
 call plug#end()
 
@@ -317,3 +337,10 @@ augroup END
 augroup md
   autocmd FileType markdown iabbrev <buffer> \|\|\| \|     \|     \|     \|<CR>\| --- \| --- \| --- \|<CR>\|     \|     \|     \|<CR>\|     \|     \|     \|<CR>\|     \|     \|     \|
 augroup END
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" renamer
+
+" fix bug
+let g:RenamerShowHidden = 0
