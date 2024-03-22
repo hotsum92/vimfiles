@@ -286,7 +286,7 @@ xmap <Space>M <Plug>(quickhl-manual-reset)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " mbbill/undotree
 
-nnoremap <F5> :UndotreeToggleder<cr>
+nnoremap <F5> :UndotreeToggle<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " easymotion/vim-easymotion
