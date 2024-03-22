@@ -1,3 +1,3 @@
 #!/bin/bash -eu
 
-ln -sf "$(pwd)" ~/.vim
+ln -sf "$(pwd)" "$HOME/.vim"
