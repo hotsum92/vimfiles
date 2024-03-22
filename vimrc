@@ -273,7 +273,8 @@ call plug#end()
 " Quramy/tsuquyomi
 
 let g:tsuquyomi_disable_default_mappings = 1
-nnoremap <C-]> :TsuquyomiDefinition<CR>
+autocmd FileType typescript nnoremap <C-]> :TsuquyomiDefinition<CR>
+autocmd FileType typescriptreact nnoremap <C-]> :TsuquyomiDefinition<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " t9md/vim-quickhl
