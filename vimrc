@@ -136,13 +136,13 @@ vmap <C-ScrollWheelRight> <nop>
 "set foldlevel=1
 "set foldnestmax=2
 
-autocmd FileType yaml setlocal foldmethod=indent
-autocmd FileType json setlocal foldmethod=syntax
-autocmd FileType html setlocal foldmethod=syntax
-autocmd FileType css setlocal foldmethod=syntax
-autocmd FileType python setlocal foldmethod=indent
-autocmd FileType typescript setlocal foldmethod=syntax
-autocmd FileType typescriptreact setlocal foldmethod=syntax
+"autocmd FileType yaml setlocal foldmethod=indent
+"autocmd FileType json setlocal foldmethod=syntax
+"autocmd FileType html setlocal foldmethod=syntax
+"autocmd FileType css setlocal foldmethod=syntax
+"autocmd FileType python setlocal foldmethod=indent
+"autocmd FileType typescript setlocal foldmethod=syntax
+"autocmd FileType typescriptreact setlocal foldmethod=syntax
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " keymap
@@ -151,6 +151,8 @@ nnoremap <Up>    :tabclose<CR>
 nnoremap <Down>  :tabnew<CR>
 nnoremap <Left>  :tabprevious<CR>
 nnoremap <Right> :tabnext<CR>
+nnoremap <S-Left>  :bprev<CR>
+nnoremap <S-Right> :bnext<CR>
 
 nnoremap <Esc><Esc> :nohlsearch<CR>
 
@@ -163,16 +165,6 @@ nnoremap <C-l> <C-w>l
 " search japanese
 
 command! -nargs=* Jp call Sjp()
-
-function! Sjp()
-    "let @/ = '[^\x01-\x7E]\+'
-    let @/ = '[\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\uFF00-\uFFEF\u4E00-\u9FFF\u3400-\u4DBF]\+'
-endfunction
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" markdown table
-
-command! -nargs=* Mdtable call Sjp()
 
 function! Sjp()
     "let @/ = '[^\x01-\x7E]\+'
@@ -208,15 +200,15 @@ endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " compiler
-
-command! -nargs=* Tsc call Stsc()
-
-function! Stsc()
-  compiler tsc
-  set makeprg=tsc\ --noEmit
-  make
-  cwindow
-endfunction
+"
+"command! -nargs=* Tsc call Stsc()
+"
+"function! Stsc()
+"  compiler tsc
+"  set makeprg=tsc\ --noEmit
+"  make
+"  cwindow
+"endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " blame
@@ -225,8 +217,19 @@ command! -nargs=* Blame call Sblame()
 
 function! Sblame()
   let l:line = line('.')
-  let l:command = 'git blame % -L ' . l:line
-  execute '!' . l:command
+  "let l:command = 'git blame % -L ' . l:line
+  let l:command = 'tig blame % +' . l:line
+  execute 'silent !' . l:command
+  execute 'redraw!'
+endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" blame
+
+command! -nargs=* Cp call Scp()
+
+function! Scp()
+  let @+ = expand('%:p')
 endfunction
 
 
@@ -253,12 +256,15 @@ Plug 'junegunn/vim-easy-align'
 Plug 'cohama/lexima.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
 Plug 'alvan/vim-closetag'
 Plug 'kshenoy/vim-signature'
 Plug 'Quramy/tsuquyomi'
 Plug 'github/copilot.vim'
 Plug 'preservim/vim-indent-guides'
 Plug 'qpkorr/vim-renamer'
+Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'fuenor/qfixgrep'
 
 call plug#end()
 
@@ -279,7 +285,7 @@ xmap <Space>M <Plug>(quickhl-manual-reset)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " mbbill/undotree
 
-nnoremap <F5> :UndotreeToggle<cr>
+nnoremap <F5> :UndotreeToggleder<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " easymotion/vim-easymotion
@@ -294,6 +300,20 @@ let g:EasyMotion_smartcase = 1
 let g:EasyMotion_enter_jump_first = 1
 
 map / <Plug>(easymotion-sn)
+
+map  <Space>f <Plug>(easymotion-bd-f)
+nmap <Space>f <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Move to line
+map <Space>l <Plug>(easymotion-bd-jk)
+nmap <Space>l <Plug>(easymotion-overwin-line)
+
+" Move to word
+map  <Space>w <Plug>(easymotion-bd-w)
+nmap <Space>w <Plug>(easymotion-overwin-w)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " alvan/vim-closetag
@@ -314,6 +334,9 @@ autocmd BufReadPre *
      \ | if f > 100000 || f == -2
      \ | let b:copilot_enabled = v:false
      \ | endif
+
+inoremap <C-]> <Plug>(copilot-next)
+inoremap <C-[> <Plug>(copilot-prev)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " indent-guides
@@ -344,3 +367,31 @@ augroup END
 
 " fix bug
 let g:RenamerShowHidden = 0
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" surround
+
+let g:surround_47 = "/* \r */"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ctrl-p
+
+let g:ctrlp_cmd = 'CtrlPBuffer'
+" 曖昧検索をoff
+"let g:ctrlp_regexp = 1
+
+" # 隠しファイルを表示しない
+let g:ctrlp_show_hidden = 0
+
+" # vim終了時にキャッシュをクリアする
+let g:ctrlp_clear_cache_on_exit = 1
+
+" # 検索結果の表示ウィンドウの設定，10件分を表示（それ以上になってもスクロールされる）
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:50'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" QfixWin
+
+"let QFixWin_EnableMode = 3
+"let MyGrep_Commands = 1
