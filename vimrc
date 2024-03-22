@@ -264,6 +264,7 @@ Plug 'github/copilot.vim'
 Plug 'preservim/vim-indent-guides'
 Plug 'qpkorr/vim-renamer'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'fatih/vim-go'
 "Plug 'fuenor/qfixgrep'
 
 call plug#end()
