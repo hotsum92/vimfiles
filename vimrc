@@ -326,6 +326,7 @@ let g:closetag_filenames = '*.html,*.xhtml,*.tsx'
 " copilot.vim
 
 let g:copilot_filetypes = {
+    \ '*': v:true,
     \ 'gitcommit': v:true,
     \ 'markdown': v:true,
     \ 'yaml': v:true
