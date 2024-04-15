@@ -161,7 +161,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-"nnoremap <Enter> :.w !bash<CR>
+nnoremap <F2> :.w !bash<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " search japanese
