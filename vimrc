@@ -131,20 +131,6 @@ vmap <S-ScrollWheelRight> <nop>
 vmap <C-ScrollWheelRight> <nop>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" foldmethod
-
-"set foldlevel=1
-"set foldnestmax=2
-
-"autocmd FileType yaml setlocal foldmethod=indent
-"autocmd FileType json setlocal foldmethod=syntax
-"autocmd FileType html setlocal foldmethod=syntax
-"autocmd FileType css setlocal foldmethod=syntax
-"autocmd FileType python setlocal foldmethod=indent
-"autocmd FileType typescript setlocal foldmethod=syntax
-"autocmd FileType typescriptreact setlocal foldmethod=syntax
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " keymap
 
 nnoremap <Up>    :tabclose<CR>
@@ -163,16 +149,6 @@ nnoremap <C-l> <C-w>l
 
 vnoremap <Space><CR> :!bash<CR>
 nnoremap <Space><CR> V:!bash<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" search japanese
-
-command! -nargs=* Jp call Sjp()
-
-function! Sjp()
-    "let @/ = '[^\x01-\x7E]\+'
-    let @/ = '[\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\uFF00-\uFFEF\u4E00-\u9FFF\u3400-\u4DBF]\+'
-endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set tabstop, softtabstop and shiftwidth to the same value
@@ -201,40 +177,6 @@ function! Stab()
   endtry
 endfunction
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" compiler
-"
-"command! -nargs=* Tsc call Stsc()
-"
-"function! Stsc()
-"  compiler tsc
-"  set makeprg=tsc\ --noEmit
-"  make
-"  cwindow
-"endfunction
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" blame
-
-command! -nargs=* Blame call Sblame()
-
-function! Sblame()
-  let l:line = line('.')
-  "let l:command = 'git blame % -L ' . l:line
-  let l:command = 'tig blame % +' . l:line
-  execute 'silent !' . l:command
-  execute 'redraw!'
-endfunction
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" blame
-
-command! -nargs=* Cp call Scp()
-
-function! Scp()
-  let @+ = expand('%:p')
-endfunction
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " auto cmd
@@ -245,7 +187,6 @@ autocmd QuickFixCmdPost *grep* cwindow
 " default plug
 
 packadd! matchit
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " plug
@@ -396,8 +337,3 @@ let g:ctrlp_clear_cache_on_exit = 1
 " # 検索結果の表示ウィンドウの設定，10件分を表示（それ以上になってもスクロールされる）
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:50'
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" QfixWin
-
-"let QFixWin_EnableMode = 3
-"let MyGrep_Commands = 1
