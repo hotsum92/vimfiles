@@ -207,6 +207,7 @@ Plug 'preservim/vim-indent-guides'
 Plug 'qpkorr/vim-renamer'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go'
+Plug 'nelstrom/vim-visual-star-search'
 
 call plug#end()
 
