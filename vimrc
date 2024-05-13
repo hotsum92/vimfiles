@@ -67,8 +67,6 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
-set clipboard=unnamed,autoselect
-
 set encoding=utf-8
 set fileencodings=utf-8,sjis,iso-2022-jp,euc-jp
 set fileformats=unix,dos,mac
