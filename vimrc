@@ -279,8 +279,8 @@ autocmd BufReadPre *
      \ | let b:copilot_enabled = v:false
      \ | endif
 
-inoremap <C-]> <Plug>(copilot-next)
-inoremap <C-[> <Plug>(copilot-prev)
+"inoremap <C-]> <Plug>(copilot-next)
+"inoremap <C-[> <Plug>(copilot-prev)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " indent-guides
