@@ -182,6 +182,17 @@ endfunction
 autocmd QuickFixCmdPost *grep* cwindow
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" iabbrev
+
+augroup sql
+  autocmd FileType sql iabbrev <buffer> select SELECT
+  autocmd FileType sql iabbrev <buffer> from FROM
+  autocmd FileType sql iabbrev <buffer> where WHERE
+  autocmd FileType sql iabbrev <buffer> order ORDER
+  autocmd FileType sql iabbrev <buffer> by BY
+augroup END
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " default plug
 
 packadd! matchit
@@ -192,31 +203,20 @@ packadd! matchit
 call plug#begin('~/.vim/plugged')
 
 Plug 't9md/vim-quickhl'
-Plug 'mbbill/undotree'
 Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/vim-easy-align'
-"Plug 'cohama/lexima.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'alvan/vim-closetag'
-Plug 'kshenoy/vim-signature'
 Plug 'Quramy/tsuquyomi'
 Plug 'github/copilot.vim'
 Plug 'preservim/vim-indent-guides'
-Plug 'qpkorr/vim-renamer'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go'
 Plug 'nelstrom/vim-visual-star-search'
+"Plug 'cohama/lexima.vim'
 
 call plug#end()
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Quramy/tsuquyomi
-
-let g:tsuquyomi_disable_default_mappings = 1
-autocmd FileType typescript nnoremap <C-]> :TsuquyomiDefinition<CR>
-autocmd FileType typescriptreact nnoremap <C-]> :TsuquyomiDefinition<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " t9md/vim-quickhl
@@ -225,11 +225,7 @@ nmap <Space>m <Plug>(quickhl-manual-this)
 xmap <Space>m <Plug>(quickhl-manual-this)
 nmap <Space>M <Plug>(quickhl-manual-reset)
 xmap <Space>M <Plug>(quickhl-manual-reset)
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" mbbill/undotree
-
-nnoremap <F5> :UndotreeToggle<cr>
+nmap <Space><C-m> <Plug>(quickhl-manual-reset)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " easymotion/vim-easymotion
@@ -264,6 +260,29 @@ map  <Space>w <Plug>(easymotion-bd-w)
 nmap <Space>w <Plug>(easymotion-overwin-w)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" junegunn/vim-easy-align
+
+" :LiveEasyAlign
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" surround
+
+" surround by key /(47)
+let g:surround_47 = "/* \r */"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" tpope/vim-commentary
+
+" gcc
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Quramy/tsuquyomi
+
+let g:tsuquyomi_disable_default_mappings = 1
+autocmd FileType typescript nnoremap <C-]> :TsuquyomiDefinition<CR>
+autocmd FileType typescriptreact nnoremap <C-]> :TsuquyomiDefinition<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " alvan/vim-closetag
 
 let g:closetag_filenames = '*.html,*.xhtml,*.tsx'
@@ -294,48 +313,4 @@ let g:indent_guides_enable_on_vim_startup = 1
 
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" iabbrev
-
-augroup sql
-  autocmd FileType sql iabbrev <buffer> select SELECT
-  autocmd FileType sql iabbrev <buffer> from FROM
-  autocmd FileType sql iabbrev <buffer> where WHERE
-  autocmd FileType sql iabbrev <buffer> order ORDER
-  autocmd FileType sql iabbrev <buffer> by BY
-augroup END
-
-augroup md
-  autocmd FileType markdown iabbrev <buffer> \|\|\| \|     \|     \|     \|<CR>\| --- \| --- \| --- \|<CR>\|     \|     \|     \|<CR>\|     \|     \|     \|<CR>\|     \|     \|     \|
-augroup END
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" renamer
-
-" fix bug
-let g:RenamerShowHidden = 0
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" surround
-
-let g:surround_47 = "/* \r */"
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ctrl-p
-
-let g:ctrlp_cmd = 'CtrlPBuffer'
-" 曖昧検索をoff
-"let g:ctrlp_regexp = 1
-
-" # 隠しファイルを表示しない
-let g:ctrlp_show_hidden = 0
-
-" # vim終了時にキャッシュをクリアする
-let g:ctrlp_clear_cache_on_exit = 1
-
-" # 検索結果の表示ウィンドウの設定，10件分を表示（それ以上になってもスクロールされる）
-let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:50'
 
