@@ -58,8 +58,8 @@ set backspace=indent,eol,start
 
 set incsearch
 set hlsearch
-"set ignorecase
-"set smartcase
+set ignorecase
+set smartcase
 set nowrapscan
 
 set tabstop=2
@@ -238,12 +238,16 @@ nnoremap <F5> :UndotreeToggle<cr>
 let g:EasyMotion_do_mapping = 0
 
 " Turn on case insensitive feature
-"let g:EasyMotion_smartcase = 1
+let g:EasyMotion_smartcase = 1
 
 " Jump to first match with enter & space
 let g:EasyMotion_enter_jump_first = 1
 
 map / <Plug>(easymotion-sn)
+
+" case sensitive
+nnoremap <Space>/ /\C
+nnoremap <Space>? ?\C
 
 map  <Space>f <Plug>(easymotion-bd-f)
 nmap <Space>f <Plug>(easymotion-overwin-f)
