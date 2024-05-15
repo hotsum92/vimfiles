@@ -215,6 +215,7 @@ Plug 'preservim/vim-indent-guides'
 Plug 'fatih/vim-go'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'Asheq/close-buffers.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'cohama/lexima.vim'
 
 call plug#end()
@@ -316,3 +317,7 @@ let g:indent_guides_enable_on_vim_startup = 1
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ctrlp
+
+let g:ctrlp_cmd = 'CtrlPBuffer'
