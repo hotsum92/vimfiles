@@ -214,6 +214,7 @@ Plug 'github/copilot.vim'
 Plug 'preservim/vim-indent-guides'
 Plug 'fatih/vim-go'
 Plug 'nelstrom/vim-visual-star-search'
+Plug 'Asheq/close-buffers.vim'
 "Plug 'cohama/lexima.vim'
 
 call plug#end()
