@@ -146,8 +146,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 vnoremap <CR> :terminal bash<CR>
-vnoremap <Space><CR> :!bash<CR>
-nnoremap <Space><CR> :.!bash<CR>
+nnoremap <Space><CR> :.terminal bash<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set tabstop, softtabstop and shiftwidth to the same value
