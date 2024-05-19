@@ -227,7 +227,6 @@ nmap <Space>m <Plug>(quickhl-manual-this)
 xmap <Space>m <Plug>(quickhl-manual-this)
 nmap <Space>M <Plug>(quickhl-manual-reset)
 xmap <Space>M <Plug>(quickhl-manual-reset)
-nmap <Space><C-m> <Plug>(quickhl-manual-reset)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " easymotion/vim-easymotion
@@ -321,3 +320,4 @@ hi IndentGuidesEven ctermbg=darkgrey
 " ctrlp
 
 let g:ctrlp_cmd = 'CtrlPBuffer'
+
