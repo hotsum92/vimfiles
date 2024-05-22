@@ -148,6 +148,15 @@ nnoremap <C-l> <C-w>l
 vnoremap <CR> :terminal bash<CR>
 nnoremap <Space><CR> :.terminal bash<CR>
 
+autocmd FileType markdown nnoremap <CR> :terminal bash<CR>
+autocmd FileType markdown nnoremap <Space><CR> :.terminal bash<CR>
+
+autocmd FileType sh vnoremap <CR> :terminal bash<CR>
+autocmd FileType sh nnoremap <Space><CR> :.terminal bash<CR>
+
+autocmd FileType go vnoremap <CR> :terminal yaegi<CR>
+autocmd FileType go nnoremap <Space><CR> :.terminal bash<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set tabstop, softtabstop and shiftwidth to the same value
 
