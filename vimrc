@@ -25,6 +25,8 @@ function! Stab()
   endtry
 endfunction
 
+command! CopyPath :let @+=expand('%:p')
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " backup
 
