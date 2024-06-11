@@ -1,4 +1,4 @@
-"set shell=/opt/homebrew/bin/bash
+set shell=/opt/homebrew/bin/bash
 
 function Exec() range
   if &filetype == 'go'
