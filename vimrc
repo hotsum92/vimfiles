@@ -1,3 +1,13 @@
+set shell=/opt/homebrew/bin/bash
+
+function Exec() range
+  if &filetype == 'go'
+    '<,'>terminal yaegi
+  else
+    '<,'>terminal bash
+  endif
+endfunction
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set tabstop, softtabstop and shiftwidth to the same value
 
@@ -177,7 +187,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-vnoremap <CR> :terminal bash<CR>
+vnoremap <CR> :call Exec()<CR>
 nnoremap <Space><CR> :.!bash<CR>
 
 
