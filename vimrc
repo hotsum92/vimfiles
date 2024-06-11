@@ -221,6 +221,7 @@ Plug 'fatih/vim-go'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'Asheq/close-buffers.vim'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-dotenv'
 "Plug 'cohama/lexima.vim'
 
 call plug#end()
