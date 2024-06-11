@@ -1,10 +1,30 @@
-set shell=/opt/homebrew/bin/bash
+"set shell=/opt/homebrew/bin/bash
+
+function Execr() range
+  if &filetype == 'go'
+    '<,'>terminal yaegi
+  elseif &filetype == 'sql'
+    if executable('./db.sh')
+      '<,'>terminal ./db.sh
+    else
+      '<,'>terminal mysql -u root
+    endif
+  else
+    '<,'>terminal bash
+  endif
+endfunction
 
 function Exec() range
   if &filetype == 'go'
-    '<,'>terminal yaegi
+    .!yaegi
+  elseif &filetype == 'sql'
+    if executable('./db.sh')
+      .!./db.sh
+    else
+      .!mysql -u root
+    endif
   else
-    '<,'>terminal bash
+    .!bash
   endif
 endfunction
 
@@ -187,8 +207,8 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-vnoremap <CR> :call Exec()<CR>
-nnoremap <Space><CR> :.!bash<CR>
+vnoremap <CR> :call Execr()<CR>
+nnoremap <Space><CR> :call Exec()<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
