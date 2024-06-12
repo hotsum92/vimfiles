@@ -138,7 +138,7 @@ set complete=.,w,b,t
 " behavior
 
 " :terminal to use shell
-"set shell=/opt/homebrew/bin/bash
+set shell=/opt/homebrew/bin/bash
 
 
 if has('gui_running')
