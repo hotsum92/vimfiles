@@ -9,6 +9,8 @@ function Execr() range
     else
       '<,'>terminal mysql -u root
     endif
+  elseif &filetype == 'python'
+    '<,'>terminal python -
   else
     '<,'>terminal bash
   endif
@@ -23,6 +25,8 @@ function Exec() range
     else
       .!mysql -u root
     endif
+  elseif &filetype == 'python'
+    .!python -
   else
     .!bash
   endif
