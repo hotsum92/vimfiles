@@ -10,7 +10,11 @@ function Execr() range
       '<,'>terminal mysql -u root
     endif
   elseif &filetype == 'python'
-    '<,'>terminal python -
+    if executable('./python.sh')
+      '<,'>terminal ./python.sh
+    else
+      '<,'>terminal python -
+    endif
   else
     if executable('./bash.sh')
       '<,'>terminal ./bash.sh
@@ -30,7 +34,11 @@ function Exec() range
       .!mysql -u root
     endif
   elseif &filetype == 'python'
-    .!python -
+    if executable('./python.sh')
+      .!./python.sh
+    else
+      .!python -
+    endif
   else
     if executable('./bash.sh')
       .!./bash.sh
