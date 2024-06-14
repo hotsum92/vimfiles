@@ -12,7 +12,11 @@ function Execr() range
   elseif &filetype == 'python'
     '<,'>terminal python -
   else
-    '<,'>terminal bash
+    if executable('./bash.sh')
+      '<,'>terminal ./bash.sh
+    else
+      '<,'>terminal bash
+    endif
   endif
 endfunction
 
@@ -28,7 +32,11 @@ function Exec() range
   elseif &filetype == 'python'
     .!python -
   else
-    .!bash
+    if executable('./bash.sh')
+      .!./bash.sh
+    else
+      .!bash
+    endif
   endif
 endfunction
 
