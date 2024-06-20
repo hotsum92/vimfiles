@@ -107,6 +107,9 @@ set history=1000
 " grep
 
 set grepprg=git\ grep\ -I\ --line-number
+
+" git grep -n something > tmp.txt
+" :Qfix cat tmp.txt
 command -nargs=+ Qfix :cexpr system("<args>") | cwindow
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
