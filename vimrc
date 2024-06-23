@@ -388,6 +388,7 @@ set rtp+=~/git/fzf
 
 " :GFiles : Git files
 " :Commits : Git commits
-" :BLines : Current buffer lines
 
 nnoremap <C-p> :Ag<CR>
+nnoremap <Space>f :GFiles<CR>
+nnoremap <Space>` :BLines<CR>
