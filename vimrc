@@ -389,6 +389,20 @@ set rtp+=~/git/fzf
 " :GFiles : Git files
 " :Commits : Git commits
 
+" 'wild Items that include wild
+" ^music Items that start with music
+" .mp3$ Items that end with .mp3
+" !fire Items that do not include fire
+" !^music Items that do not start with music
+" !.mp3$ Items that do not end with .mp3
+
+" ALT-A select all
+" ALT-D deselect all
+
+let g:fzf_vim = {}
+let g:fzf_vim.listproc = { list -> fzf#vim#listproc#quickfix(list) }
+let g:fzf_vim.command_prefix = 'Fzf'
+
 nnoremap <C-p> :Ag<CR>
 nnoremap <Space>f :GFiles<CR>
 nnoremap <Space>` :BLines<CR>
