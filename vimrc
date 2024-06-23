@@ -279,6 +279,8 @@ Plug 'Asheq/close-buffers.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-dotenv'
 Plug 'jsborjesson/vim-uppercase-sql'
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
 "Plug 'cohama/lexima.vim'
 
 call plug#end()
@@ -387,3 +389,7 @@ hi IndentGuidesEven ctermbg=darkgrey
 
 let g:ctrlp_cmd = 'CtrlPBuffer'
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" fzf
+
+set rtp+=~/git/fzf
