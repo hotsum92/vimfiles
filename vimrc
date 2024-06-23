@@ -385,3 +385,9 @@ hi IndentGuidesEven ctermbg=darkgrey
 " fzf
 
 set rtp+=~/git/fzf
+
+" :GFiles : Git files
+" :Commits : Git commits
+" :BLines : Current buffer lines
+
+nnoremap <C-p> :Ag<CR>
