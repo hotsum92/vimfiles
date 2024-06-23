@@ -401,7 +401,6 @@ set rtp+=~/git/fzf
 
 let g:fzf_vim = {}
 let g:fzf_vim.listproc = { list -> fzf#vim#listproc#quickfix(list) }
-let g:fzf_vim.command_prefix = 'Fzf'
 
 nnoremap <C-p> :Ag<CR>
 nnoremap <Space>f :GFiles<CR>
