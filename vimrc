@@ -276,7 +276,6 @@ Plug 'preservim/vim-indent-guides'
 Plug 'fatih/vim-go'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'Asheq/close-buffers.vim'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-dotenv'
 Plug 'jsborjesson/vim-uppercase-sql'
 Plug 'junegunn/fzf.vim'
@@ -381,13 +380,6 @@ let g:indent_guides_enable_on_vim_startup = 1
 
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ctrlp
-
-" ctrl-f: change mode
-
-let g:ctrlp_cmd = 'CtrlPBuffer'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fzf
