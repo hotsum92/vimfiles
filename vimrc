@@ -1,4 +1,5 @@
-"set shell=/opt/homebrew/bin/bash
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" execute command
 
 function Execr() range
   if &filetype == 'go'
@@ -47,6 +48,9 @@ function Exec() range
     endif
   endif
 endfunction
+
+vnoremap <CR> :call Execr()<CR>
+nnoremap <Space><CR> :call Exec()<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set tabstop, softtabstop and shiftwidth to the same value
@@ -106,11 +110,15 @@ set history=1000
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " grep
 
+autocmd QuickFixCmdPost *grep* cwindow
+
 set grepprg=git\ grep\ -I\ --line-number
 
+" CHIPS: how to use list.txt
 " git grep -n something > tmp.txt
 " :Qfix cat tmp.txt
 command -nargs=+ Qfix :cexpr system("<args>") | cwindow
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " complete
@@ -120,6 +128,10 @@ set complete=.,w,b,t
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " behavior
+
+" :terminal to use shell
+"set shell=/opt/homebrew/bin/bash
+
 
 if has('gui_running')
   set spell
@@ -216,8 +228,8 @@ vmap <C-ScrollWheelRight> <nop>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " keymap
 
-nnoremap <Up>    :tabclose<CR>
-nnoremap <Down>  :tabnew<CR>
+"nnoremap <Up>    :tabclose<CR>
+"nnoremap <Down>  :tabnew<CR>
 nnoremap <Left>  :tabprevious<CR>
 nnoremap <Right> :tabnext<CR>
 nnoremap <S-Left>  :bprev<CR>
@@ -230,25 +242,16 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-vnoremap <CR> :call Execr()<CR>
-nnoremap <Space><CR> :call Exec()<CR>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" auto cmd
-
-autocmd QuickFixCmdPost *grep* cwindow
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " iabbrev
 
-augroup sql
-  autocmd FileType sql iabbrev <buffer> select SELECT
-  autocmd FileType sql iabbrev <buffer> from FROM
-  autocmd FileType sql iabbrev <buffer> where WHERE
-  autocmd FileType sql iabbrev <buffer> order ORDER
-  autocmd FileType sql iabbrev <buffer> by BY
-augroup END
+"augroup sql
+"  autocmd FileType sql iabbrev <buffer> select SELECT
+"  autocmd FileType sql iabbrev <buffer> from FROM
+"  autocmd FileType sql iabbrev <buffer> where WHERE
+"  autocmd FileType sql iabbrev <buffer> order ORDER
+"  autocmd FileType sql iabbrev <buffer> by BY
+"augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " default plug
@@ -275,6 +278,7 @@ Plug 'nelstrom/vim-visual-star-search'
 Plug 'Asheq/close-buffers.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-dotenv'
+Plug 'jsborjesson/vim-uppercase-sql'
 "Plug 'cohama/lexima.vim'
 
 call plug#end()
@@ -305,9 +309,6 @@ map / <Plug>(easymotion-sn)
 nnoremap <Space>/ /\C
 nnoremap <Space>? ?\C
 
-map  <Space>f <Plug>(easymotion-bd-f)
-nmap <Space>f <Plug>(easymotion-overwin-f)
-
 " s{char}{char} to move to {char}{char}
 nmap s <Plug>(easymotion-overwin-f2)
 
@@ -318,6 +319,9 @@ nmap <Space>l <Plug>(easymotion-overwin-line)
 " Move to word
 map  <Space>w <Plug>(easymotion-bd-w)
 nmap <Space>w <Plug>(easymotion-overwin-w)
+
+"map  <Space>f <Plug>(easymotion-bd-f)
+"nmap <Space>f <Plug>(easymotion-overwin-f)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " junegunn/vim-easy-align
@@ -366,6 +370,7 @@ autocmd BufReadPre *
 imap <C-j> <Plug>(copilot-next)
 imap <C-k> <Plug>(copilot-previous)
 imap <C-c> <Plug>(copilot-dismiss)
+nnoremap <Space>j :Copilot panel<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " indent-guides
@@ -377,6 +382,8 @@ hi IndentGuidesEven ctermbg=darkgrey
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ctrlp
+
+" ctrl-f: change mode
 
 let g:ctrlp_cmd = 'CtrlPBuffer'
 
