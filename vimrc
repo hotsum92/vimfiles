@@ -406,6 +406,6 @@ autocmd VimEnter *
 \ command! -bang -nargs=* Ag
 \ call fzf#vim#ag(<q-args>, '', { 'options': '--bind ctrl-a:select-all,ctrl-d:deselect-all' }, <bang>0)
 
-nnoremap <C-p> :Ag<CR>
+nnoremap <C-p> :GFiles<CR>
 nnoremap <C-m> :BLines<CR>
-nnoremap <Space>f :GFiles<CR>
+nnoremap <Space>` :Ag<CR>
