@@ -242,6 +242,8 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+nnoremap gf gF
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " iabbrev
 
@@ -407,5 +409,5 @@ autocmd VimEnter *
 \ call fzf#vim#ag(<q-args>, '', { 'options': '--bind ctrl-a:select-all,ctrl-d:deselect-all' }, <bang>0)
 
 nnoremap <C-p> :GFiles<CR>
-nnoremap <C-m> :BLines<CR>
+nnoremap <C-f> :BLines<CR>
 nnoremap <Space>` :Ag<CR>
