@@ -388,6 +388,7 @@ set rtp+=~/git/fzf
 
 " :GFiles : Git files
 " :Commits : Git commits
+" :Maps : Key mappings
 
 " 'wild Items that include wild
 " ^music Items that start with music
@@ -396,12 +397,15 @@ set rtp+=~/git/fzf
 " !^music Items that do not start with music
 " !.mp3$ Items that do not end with .mp3
 
-" ALT-A select all
-" ALT-D deselect all
-
 let g:fzf_vim = {}
 let g:fzf_vim.listproc = { list -> fzf#vim#listproc#quickfix(list) }
 
+" ALT-A select all
+" ALT-D deselect all
+autocmd VimEnter *
+\ command! -bang -nargs=* Ag
+\ call fzf#vim#ag(<q-args>, '', { 'options': '--bind ctrl-a:select-all,ctrl-d:deselect-all' }, <bang>0)
+
 nnoremap <C-p> :Ag<CR>
+nnoremap <C-m> :BLines<CR>
 nnoremap <Space>f :GFiles<CR>
-nnoremap <Space>` :BLines<CR>
