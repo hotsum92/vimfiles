@@ -243,7 +243,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 nnoremap gf gF
-nnoremap ygf :echo expand("%") . ':' . line(".") . ':' . getline('.')<CR>
+nnoremap ygf :let @" = expand("%") . ':' . line(".") . ':' . getline('.')<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " iabbrev
