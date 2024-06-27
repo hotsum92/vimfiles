@@ -1,4 +1,12 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" variable
+
+let cwd = getcwd()
+
+command! Cwd :cd `=cwd`
+command! CopyPath :let @+=expand('%:p')
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " execute command
 
 function Execr() range
@@ -79,7 +87,6 @@ function! Stab()
   endtry
 endfunction
 
-command! CopyPath :let @+=expand('%:p')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " backup
