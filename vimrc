@@ -264,6 +264,12 @@ nnoremap ygf :let @" = expand("%") . ':' . line(".") . ':' . getline('.')<CR>
 "augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Man
+
+runtime! ftplugin/man.vim
+nmap K \K
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " default plug
 
 packadd! matchit
