@@ -394,6 +394,7 @@ nnoremap <Space>j :Copilot panel<CR>
 " indent-guides
 
 let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_indent_levels = 50
 
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
