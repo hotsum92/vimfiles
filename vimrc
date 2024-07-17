@@ -5,6 +5,7 @@ let cwd = getcwd()
 
 command! Cwd :cd `=cwd`
 command! CopyCwd :let @+=expand("%:~:.")
+command! CopyLine :let @+=expand("%:~:.").":".line(".").":".getline('.')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " execute command
@@ -250,7 +251,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 nnoremap gf gF
-nnoremap ygf :let @" = expand("%") . ':' . line(".") . ':' . getline('.')<CR>
+nnoremap ygf :let @+=expand("%:~:.").":".line(".").":".getline('.')<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " iabbrev
