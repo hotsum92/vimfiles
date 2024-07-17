@@ -4,7 +4,7 @@
 let cwd = getcwd()
 
 command! Cwd :cd `=cwd`
-command! CopyCwd :let @+=expand('%:p')
+command! CopyCwd :let @+=expand("%:~:.")
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " execute command
