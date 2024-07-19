@@ -328,7 +328,7 @@ nnoremap <Space>/ /\C
 nnoremap <Space>? ?\C
 
 " s{char}{char} to move to {char}{char}
-nmap s <Plug>(easymotion-overwin-f2)
+nmap s <Plug>(easymotion-f2)
 
 " Move to line
 map <Space>l <Plug>(easymotion-bd-jk)
