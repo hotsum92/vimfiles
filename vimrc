@@ -328,11 +328,11 @@ nnoremap <Space>/ /\C
 nnoremap <Space>? ?\C
 
 " s{char}{char} to move to {char}{char}
-nmap s <Plug>(easymotion-f2)
+nmap s <Plug>(easymotion-bd-f2)
 
 " Move to line
 map <Space>l <Plug>(easymotion-bd-jk)
-nmap <Space>l <Plug>(easymotion-overwin-line)
+nmap <Space>l <Plug>(easymotion-bd-jk)
 
 " Move to word
 map  <Space>w <Plug>(easymotion-bd-w)
