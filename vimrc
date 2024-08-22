@@ -296,6 +296,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dotenv'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'adelarsq/vim-matchit'
 "Plug 'cohama/lexima.vim'
 
 call plug#end()
