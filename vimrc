@@ -297,9 +297,6 @@ Plug 'tpope/vim-dotenv'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'adelarsq/vim-matchit'
-Plug 'godlygeek/tabular'
-Plug 'vim-denops/denops.vim'
-Plug 'vim-skk/skkeleton'
 "Plug 'cohama/lexima.vim'
 
 call plug#end()
@@ -430,13 +427,3 @@ autocmd VimEnter *
 nnoremap <C-p> :GFiles<CR>
 nnoremap <C-f> :BLines<CR>
 nnoremap <Space>` :Ag<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" skkeleton
-
-call skkeleton#config({ 'globalDictionaries': [['~/.skk/SKK-JISYO.L', 'euc-jp']] })
-call skkeleton#register_keymap('input', '<C-q>', 'katakana')
-
-imap <C-j> <Plug>(skkeleton-enable)
-cmap <C-j> <Plug>(skkeleton-enable)
-
