@@ -61,6 +61,8 @@ endfunction
 vnoremap <CR> :call Execr()<CR>
 nnoremap <Space><CR> :call Exec()<CR>
 
+nnoremap <Space>o :!code --goto %:~:.<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set tabstop, softtabstop and shiftwidth to the same value
 
