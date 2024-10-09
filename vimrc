@@ -142,7 +142,6 @@ set complete=.,w,b,t
 " :terminal to use shell
 "set shell=/opt/homebrew/bin/bash
 
-
 if has('gui_running')
   set spell
 else
@@ -429,3 +428,4 @@ autocmd VimEnter *
 nnoremap <C-p> :GFiles<CR>
 nnoremap <C-f> :BLines<CR>
 nnoremap <Space>` :Ag<CR>
+let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.4, 'yoffset': 1, 'border': 'horizontal' } }
