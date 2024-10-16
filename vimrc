@@ -403,7 +403,7 @@ hi IndentGuidesEven ctermbg=darkgrey
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fzf
 
-set rtp+=~/git/fzf
+set rtp+=~/.fzf
 
 " :GFiles : Git files
 " :Commits : Git commits
@@ -425,7 +425,10 @@ autocmd VimEnter *
 \ command! -bang -nargs=* Ag
 \ call fzf#vim#ag(<q-args>, '', { 'options': '--bind ctrl-a:select-all,ctrl-d:deselect-all' }, <bang>0)
 
-nnoremap <C-p> :GFiles<CR>
-nnoremap <C-f> :BLines<CR>
+command! -bang -nargs=? -complete=dir DFiles
+    \ call fzf#vim#files(<q-args>, { 'source': 'git diff --name-only $(git merge-base master HEAD)', 'options': ['--preview', 'git diff $(git merge-base master HEAD) -- {} | tail -n +5 | grep -e "^+" -e "^-" -e "^@" | sed "s/^@.*//"']}, <bang>0)
+
+nnoremap <C-p> :DFiles<CR>
+nnoremap <C-f> :GFiles<CR>
 nnoremap <Space>` :Ag<CR>
 let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.4, 'yoffset': 1, 'border': 'horizontal' } }
