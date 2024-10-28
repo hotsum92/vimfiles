@@ -298,6 +298,15 @@ Plug 'tpope/vim-dotenv'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'adelarsq/vim-matchit'
+Plug 'vim-denops/denops.vim'
+Plug 'vim-denops/denops-helloworld.vim'
+Plug 'vim-skk/skkeleton'
+Plug 'Shougo/ddc.vim'
+Plug 'Shougo/ddc-source-around'
+Plug 'Shougo/ddc-filter-matcher_head'
+Plug 'Shougo/ddc-filter-sorter_rank'
+Plug 'Shougo/ddc-source-nextword'
+Plug 'Shougo/ddc-ui-native'
 "Plug 'cohama/lexima.vim'
 
 call plug#end()
@@ -432,3 +441,33 @@ nnoremap <C-p> :DFiles<CR>
 nnoremap <C-f> :GFiles<CR>
 nnoremap <Space>` :Ag<CR>
 let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.4, 'yoffset': 1, 'border': 'horizontal' } }
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" skkeleton
+
+" Vim 日本語
+" https://zenn.dev/vim_jp/articles/14ab6ea83f711a
+
+" 設定参考
+" https://qiita.com/maachan_9692/items/9b507fd043424013abde
+
+let g:denops_disable_version_check = 1
+call skkeleton#config({ 'globalDictionaries': [['~/.skk/SKK-JISYO.L', 'euc-jp']] })
+
+imap <C-j> <Plug>(skkeleton-enable)
+cmap <C-j> <Plug>(skkeleton-enable)
+
+call ddc#custom#patch_global('ui', 'native')
+call ddc#custom#patch_global('sources', ['skkeleton'])
+call ddc#custom#patch_global('sourceOptions', {
+    \   'skkeleton': {
+    \     'mark': 'skkeleton',
+    \     'matchers': [],
+    \     'sorters': [],
+    \     'converters': [],
+    \     'isVolatile': v:true,
+    \     'minAutoCompleteLength': 1,
+    \   },
+    \ })
+call ddc#enable()
+
